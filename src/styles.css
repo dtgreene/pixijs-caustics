@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  background: #111;
+}
+
+.container {
+  display: flex;
+}
+
+.sound-controls {
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0.6;
+}
+
+.sound-controls:hover {
+  opacity: 1.0;
+}
+
+#sound-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 16px;
+}
+
+#sound-btn:active {
+  opacity: 0.6;
+}
+
+#sound-btn img {
+  width: 36px;
+  height: 36px;
+}
