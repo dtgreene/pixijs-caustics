@@ -54,7 +54,7 @@ async function init() {
   // add window resize event listener
   window.addEventListener('resize', handleWindowResize, false);
 
-  requestAnimationFrame(animate);
+  animate();
 }
 
 function handleWindowResize() {
