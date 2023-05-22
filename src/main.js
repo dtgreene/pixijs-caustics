@@ -18,7 +18,7 @@ let causticFilter = null;
 
 async function init() {
   // https://www.cathalmcnally.com/news/free-caustics-generator/
-  const causticsTexture = await Assets.load('caustics_001.png');
+  const causticsTexture = await Assets.load('caustics_002.png');
 
   causticSprite = new Sprite(causticsTexture);
   causticFilter = new Filter(null, darkenFrag, {
@@ -54,8 +54,7 @@ async function init() {
   // add window resize event listener
   window.addEventListener('resize', handleWindowResize, false);
 
-  // setup the main loop
-  MainLoop.setUpdate(update).start();
+  requestAnimationFrame(animate);
 }
 
 function handleWindowResize() {
@@ -91,15 +90,13 @@ function handleRangeChange(event) {
   Howler.volume(volume);
 }
 
-function update(delta) {
-  try {
-    causticFilter.uniforms.uTime += 0.01 * delta;
+function animate() {
+  causticFilter.uniforms.uTime += 0.1;
 
-    renderer.render(stage);
-  } catch (error) {
-    console.error(`MainLoop update failed: ${error}`);
-    MainLoop.stop();
-  }
+  // render the stage
+  renderer.render(stage);
+
+  requestAnimationFrame(animate);
 }
 
 window.onload = init;

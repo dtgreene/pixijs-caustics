@@ -10,8 +10,8 @@ uniform float uRatio;
 
 const vec4 colorShift = vec4(0.0, 0.2, 0.2, 1.0);
 const float speed = 0.001;
-const float boost = 2.0;
-const float scale = 1.5;
+const float boost = 1.8;
+const float scale = 2.0;
 
 void main() {
   vec2 offset = vec2(speed * uTime, speed * uTime);
