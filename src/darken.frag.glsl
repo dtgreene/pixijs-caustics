@@ -8,9 +8,9 @@ uniform float uScale2;
 uniform float uTime;
 uniform float uRatio;
 
-const vec4 colorShift = vec4(0.0, 0.2, 0.2, 1.0);
-const float speed = 0.001;
-const float boost = 1.8;
+const vec4 colorShift = vec4(0.0, 0.2, 0.22, 1.0);
+const float speed = 0.002;
+const float boost = 1.5;
 const float scale = 2.0;
 
 void main() {
